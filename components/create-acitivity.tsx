@@ -51,7 +51,7 @@ export function CreateActivity() {
       const resp = await axios.post("api/activity/create_activity", values);
       setError(resp.data.error);
       setSuccess(resp.data.success);
-      location.reload();
+      // location.reload();
     } catch (error) {
       console.log(error);
     }

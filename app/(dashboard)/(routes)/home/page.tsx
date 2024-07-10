@@ -25,7 +25,9 @@ const page = () => {
             </p>
             <Button className="mt-4">Add Product</Button>
           </div> */}
-        <div className="mx-auto">{/* <PropertiesHomePage /> */}</div>
+        <div className="mx-auto">
+          {/* <PropertiesHomePage /> */}Add activities here
+        </div>
       </div>
     </>
   );
