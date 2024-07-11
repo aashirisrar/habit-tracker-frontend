@@ -16,7 +16,7 @@ const ActivityDetailsPage = ({
   return (
     <div
       key={id}
-      className="flex flex-col gap-3 bg-primary-foreground rounded-lg p-3"
+      className="flex flex-col gap-3 bg-primary-foreground rounded-lg p-4"
     >
       <div>{title}</div>
       <div>{details}</div>

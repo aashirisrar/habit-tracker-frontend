@@ -7,13 +7,17 @@ const HeatMapComponent = ({ values }: any) => {
   const [range, setRange] = useState(5);
 
   return (
-    <div>
+    <div className="flex flex-col items-center justify-center ">
       <HeatMap
-        className="w-full"
+        width={720}
         value={values}
-        weekLabels={["Mon", "Tue", "Wed", "Thurs", "Fri", "Sat", "Sun"]}
-        style={{ "--rhm-rect": "#9b9b9b" }}
-        startDate={new Date("2016/01/01")}
+        weekLabels={["Mon", "", "Wed", "", "Fri", "", "Sun"]}
+        style={{
+          "--rhm-rect": "#9b9b9b",
+          color: "#FFFF",
+        }}
+        startDate={new Date("2024/01/01")}
+        endDate={new Date("2024/12/31")}
         legendRender={(props) => (
           <rect {...props} y={props.y + 10} rx={range} />
         )}
