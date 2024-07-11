@@ -48,7 +48,7 @@ export function CreateActivity() {
   async function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values);
     try {
-      const resp = await axios.post("api/activity/create_activity", values);
+      const resp = await axios.post("api/activity/create-activity", values);
       setError(resp.data.error);
       setSuccess(resp.data.success);
       // location.reload();
