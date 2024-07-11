@@ -6,10 +6,13 @@ import { useEffect, useState } from "react";
 
 const page = () => {
   const [activity, setActivity] = useState();
+  const [values, setValues] = useState([]);
 
   async function getActivity() {
     const response = await axios.post("/api/activity/get-activity");
+    const res = await axios.post("/api/values/get-values");
     setActivity(response.data.data.habits);
+    setValues(res.data.data.values);
   }
 
   useEffect(() => {
@@ -40,6 +43,7 @@ const page = () => {
               id={activity.id}
               title={activity.title}
               details={activity.details}
+              values={values}
             />
           )}
         </div>

@@ -21,7 +21,7 @@ const ActivityDetailsPage = ({
       <div>{title}</div>
       <div>{details}</div>
       <div>
-        <HeatMapComponent value={values} />
+        <HeatMapComponent values={values} />
       </div>
     </div>
   );
