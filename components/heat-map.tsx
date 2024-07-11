@@ -9,9 +9,10 @@ const HeatMapComponent = ({ values }: any) => {
   return (
     <div>
       <HeatMap
+        className="w-full"
         value={values}
-        weekLabels={["", "Mon", "", "Wed", "", "Fri", ""]}
-        style={{ "--rhm-rect": "#b9b9b9" }}
+        weekLabels={["Mon", "Tue", "Wed", "Thurs", "Fri", "Sat", "Sun"]}
+        style={{ "--rhm-rect": "#9b9b9b" }}
         startDate={new Date("2016/01/01")}
         legendRender={(props) => (
           <rect {...props} y={props.y + 10} rx={range} />

@@ -15,7 +15,6 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { PlusCircleIcon } from "lucide-react";
-import { Textarea } from "@/components/ui/textarea";
 import {
   Form,
   FormControl,
@@ -29,26 +28,31 @@ import axios from "axios";
 import { useState } from "react";
 
 const formSchema = z.object({
-  title: z.string(),
-  details: z.string(),
+  date: z.string(),
+  count: z.string(),
+  habit_id: z.number(),
 });
 
-export function CreateActivity() {
+export function CreateActivityValuesButton({ id }: string) {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      title: "",
-      details: "",
+      date: "",
+      count: "",
+      habit_id: id,
     },
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values);
     try {
-      const resp = await axios.post("api/activity/create-activity", values);
+      const resp = await axios.post(
+        "/api/values/create-activity-values",
+        values
+      );
       setError(resp.data.error);
       setSuccess(resp.data.success);
       location.reload();
@@ -62,12 +66,12 @@ export function CreateActivity() {
       <DialogTrigger asChild>
         <Button variant="default" className="gap-x-1">
           <PlusCircleIcon size={18} />
-          Create Activity
+          Create Activity Values
         </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
-          <DialogTitle>Add New Activity</DialogTitle>
+          <DialogTitle>Add New Activity Values</DialogTitle>
           <DialogDescription>Add your Activity details.</DialogDescription>
         </DialogHeader>
         <div className="grid py-1">
@@ -75,10 +79,46 @@ export function CreateActivity() {
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
               <FormField
                 control={form.control}
-                name="title"
+                name="date"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Title:</FormLabel>
+                    <FormLabel>Date:</FormLabel>
+                    <FormControl>
+                      <Input
+                        className="col-span-3"
+                        {...field}
+                        required
+                        type="date"
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="count"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Count:</FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder="e.g 1"
+                        className="col-span-3"
+                        {...field}
+                        required
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="habit_id"
+                render={({ field }) => (
+                  <FormItem className="hidden">
+                    <FormLabel>Habit ID:</FormLabel>
                     <FormControl>
                       <Input
                         placeholder="e.g read literature"
@@ -91,26 +131,8 @@ export function CreateActivity() {
                   </FormItem>
                 )}
               />
-              <FormField
-                control={form.control}
-                name="details"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Details:</FormLabel>
-                    <FormControl>
-                      <Textarea
-                        placeholder="e.g reading with full concentration a book"
-                        className="col-span-3"
-                        {...field}
-                        required
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
               <div className="flex justify-end">
-                <Button type="submit">Create Activity</Button>
+                <Button type="submit">Create Activity Values</Button>
               </div>
             </form>
           </Form>

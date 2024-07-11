@@ -1,13 +1,9 @@
 import { NextResponse } from "next/server";
-import { signIn } from "@/lib/auth";
 import axios from "axios";
 
 export async function POST(req: Request) {
   try {
-    // get habit id here
-    // const id = await req.json();
-
-    const id = 1;
+    const { id } = await req.json();
 
     const { data } = await axios.post(
       `http://127.0.0.1:8000/habits/get-habit?habitId=${id}`

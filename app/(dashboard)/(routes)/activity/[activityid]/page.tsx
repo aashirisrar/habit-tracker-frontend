@@ -1,16 +1,23 @@
 "use client";
 
 import ActivityDetailsPage from "@/components/activity-details-page";
+import { CreateActivityValuesButton } from "@/components/create-activity-values-button";
 import axios from "axios";
+import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const page = () => {
+  const params = useParams();
   const [activity, setActivity] = useState();
   const [values, setValues] = useState([]);
 
   async function getActivity() {
-    const response = await axios.post("/api/activity/get-activity");
-    const res = await axios.post("/api/values/get-values");
+    const response = await axios.post("/api/activity/get-activity", {
+      id: params.activityid,
+    });
+    const res = await axios.post("/api/values/get-values", {
+      id: params.activityid,
+    });
     setActivity(response.data.data.habits);
     setValues(res.data.data.values);
   }
@@ -23,6 +30,10 @@ const page = () => {
     <>
       <div className="flex items-center justify-between">
         <h1 className="text-lg font-semibold md:text-2xl">Activity</h1>
+        <div className="flex gap-x-3">
+          {/* // button to track user activity */}
+          {activity && <CreateActivityValuesButton id={activity?.id} />}
+        </div>
       </div>
       <div
         className="flex justify-between gap-4 rounded-lg shadow-sm"
