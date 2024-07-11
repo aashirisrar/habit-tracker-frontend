@@ -1,17 +1,25 @@
-import ActivitiesPage from "@/components/activities-page";
-import { CreateActivity } from "@/components/create-acitivity";
-import Demo from "@/components/heat-map";
-import React from "react";
+"use client";
+
+import ActivityDetailsPage from "@/components/activity-details-page";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 const page = () => {
+  const [activity, setActivity] = useState();
+
+  async function getActivity() {
+    const response = await axios.post("/api/activity/get-activity");
+    setActivity(response.data.data.habits);
+  }
+
+  useEffect(() => {
+    getActivity();
+  }, []);
+
   return (
     <>
       <div className="flex items-center justify-between">
-        <h1 className="text-lg font-semibold md:text-2xl">Activities</h1>
-        <div className="flex gap-x-3">
-          {/* // check if user is logged in */}
-          {<CreateActivity />}
-        </div>
+        <h1 className="text-lg font-semibold md:text-2xl">Activity</h1>
       </div>
       <div
         className="flex justify-between gap-4 rounded-lg shadow-sm"
@@ -27,7 +35,13 @@ const page = () => {
             <Button className="mt-4">Add Product</Button>
           </div> */}
         <div className="mx-auto w-full">
-          <ActivitiesPage />
+          {activity && (
+            <ActivityDetailsPage
+              id={activity.id}
+              title={activity.title}
+              details={activity.details}
+            />
+          )}
         </div>
       </div>
     </>

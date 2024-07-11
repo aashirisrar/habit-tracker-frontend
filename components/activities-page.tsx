@@ -17,9 +17,13 @@ const ActivitiesPage = () => {
   }, []);
 
   return (
-    <div>
+    <div className="grid grid-flow-row grid-cols-3 gap-4 cursor-pointer">
       {activities?.map((activity) => (
-        <ActivityComponent id={activity.id} />
+        <ActivityComponent
+          id={activity.id}
+          title={activity.title}
+          details={activity.details}
+        />
       ))}
     </div>
   );
