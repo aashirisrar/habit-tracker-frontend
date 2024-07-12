@@ -2,6 +2,7 @@
 
 import ActivityDetailsPage from "@/components/activity-details-page";
 import { CreateActivityValuesButton } from "@/components/create-activity-values-button";
+import { Button } from "@/components/ui/button";
 import axios from "axios";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -26,12 +27,19 @@ const page = () => {
     getActivity();
   }, []);
 
+  async function deleteActivity() {
+    const response = await axios.post("/api/activity/delete-activity", {
+      id: params.activityid,
+    });
+  }
+
   return (
     <>
       <div className="flex items-center justify-between">
         <h1 className="text-lg font-semibold md:text-2xl">Activity</h1>
         <div className="flex gap-x-3">
           {/* // button to track user activity */}
+          <Button onClick={deleteActivity}>Delete Activity</Button>
           {activity && <CreateActivityValuesButton id={activity?.id} />}
         </div>
       </div>
