@@ -1,10 +1,5 @@
+import { ActivityComponentInterface } from "@/types/route";
 import Link from "next/link";
-
-interface ActivityComponentInterface {
-  id: number;
-  title: string;
-  details: string;
-}
 
 const ActivityComponent = ({
   id,

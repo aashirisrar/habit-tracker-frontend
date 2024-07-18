@@ -4,7 +4,7 @@ interface ActivityDetailsInterface {
   id: number;
   title: string;
   details: string;
-  values: [];
+  values: [] | never[];
 }
 
 const ActivityDetailsPage = ({

@@ -1,7 +1,11 @@
-import React from "react";
+import { SkeletonCard } from "@/components/skeleton-card";
 
-const loading = () => {
-  return <div>loading</div>;
+const Page = () => {
+  return (
+    <div>
+      <SkeletonCard />
+    </div>
+  );
 };
 
-export default loading;
+export default Page;

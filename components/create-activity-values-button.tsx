@@ -36,7 +36,7 @@ const formSchema = z.object({
   habit_id: z.number(),
 });
 
-export function CreateActivityValuesButton({ id }: string) {
+export function CreateActivityValuesButton({ id }: any) {
   const [open, setOpen] = useState(false);
   const [, fetchActivity] = useAtom(fetchActivityValuesaAtom);
   const params = useParams();
