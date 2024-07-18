@@ -11,6 +11,9 @@ export const loadingAtom = atom(true);
 // Atom to hold the error state
 export const errorAtom = atom("");
 
+// Atom to hold the value of an activity
+export const activityValues = atom([]);
+
 // Atom to fetch activities and update the relevant atoms
 export const fetchActivitiesAtom = atom(null, async (get, set) => {
   set(loadingAtom, true);
@@ -24,3 +27,19 @@ export const fetchActivitiesAtom = atom(null, async (get, set) => {
     set(loadingAtom, false);
   }
 });
+
+export const fetchActivityValuesaAtom = atom(
+  null,
+  async (get, set, activityId) => {
+    try {
+      const res = await axios.post("/api/values/get-values", {
+        id: activityId,
+      });
+      set(activityValues, res.data.data.values);
+    } catch (error) {
+      set(errorAtom, "Failed to fetch activities");
+    } finally {
+      set(loadingAtom, false);
+    }
+  }
+);

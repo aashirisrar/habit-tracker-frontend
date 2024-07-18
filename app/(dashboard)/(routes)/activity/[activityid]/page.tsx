@@ -3,30 +3,39 @@
 import ActivityDetailsPage from "@/components/activity-details-page";
 import { CreateActivityValuesButton } from "@/components/create-activity-values-button";
 import { Button } from "@/components/ui/button";
+import { activityValues, fetchActivityValuesaAtom } from "@/state/atoms";
 import axios from "axios";
+import { useAtom } from "jotai";
 import { useParams, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const page = () => {
   const params = useParams();
   const [activity, setActivity] = useState();
-  const [values, setValues] = useState([]);
   const router = useRouter();
+  const [, fetchActivityValues] = useAtom(fetchActivityValuesaAtom);
+  const [values] = useAtom(activityValues);
 
   async function getActivity() {
     const response = await axios.post("/api/activity/get-activity", {
       id: params.activityid,
     });
-    const res = await axios.post("/api/values/get-values", {
-      id: params.activityid,
-    });
     setActivity(response.data.data.habits);
-    setValues(res.data.data.values);
+
+    // const res = await axios.post("/api/values/get-values", {
+    //   id: params.activityid,
+    // });
+    // setValues(res.data.data.values);
+    // fetchActivityValues();
   }
 
   useEffect(() => {
     getActivity();
   }, []);
+
+  useEffect(() => {
+    fetchActivityValues(params.activityid);
+  }, [fetchActivityValues]);
 
   async function deleteActivity() {
     const response = await axios.post("/api/activity/delete-activity", {

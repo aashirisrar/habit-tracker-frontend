@@ -26,6 +26,9 @@ import {
 
 import axios from "axios";
 import { useState } from "react";
+import { useAtom } from "jotai";
+import { fetchActivityValuesaAtom } from "@/state/atoms";
+import { useParams } from "next/navigation";
 
 const formSchema = z.object({
   date: z.string(),
@@ -34,8 +37,9 @@ const formSchema = z.object({
 });
 
 export function CreateActivityValuesButton({ id }: string) {
-  const [error, setError] = useState("");
-  const [success, setSuccess] = useState("");
+  const [open, setOpen] = useState(false);
+  const [, fetchActivity] = useAtom(fetchActivityValuesaAtom);
+  const params = useParams();
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -47,24 +51,26 @@ export function CreateActivityValuesButton({ id }: string) {
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
     try {
       const resp = await axios.post(
         "/api/values/create-activity-values",
         values
       );
-      setError(resp.data.error);
-      setSuccess(resp.data.success);
-      location.reload();
+      setOpen(false);
+      fetchActivity(params.activityid);
     } catch (error) {
       console.log(error);
     }
   }
 
   return (
-    <Dialog>
+    <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button variant="default" className="gap-x-1">
+        <Button
+          variant="default"
+          className="gap-x-1"
+          onClick={() => setOpen(true)}
+        >
           <PlusCircleIcon size={18} />
           Create Activity Values
         </Button>
