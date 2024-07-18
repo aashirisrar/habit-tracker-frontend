@@ -7,7 +7,7 @@ const HeatMapComponent = ({ values }: any) => {
   const [range, setRange] = useState(5);
 
   return (
-    <div className="flex flex-col items-center justify-center ">
+    <div className="flex flex-col items-center justify-center">
       <HeatMap
         width={720}
         value={values}

@@ -24,7 +24,7 @@ const ActivitiesPage = () => {
   }
 
   return (
-    <div className="grid grid-flow-row grid-cols-3 gap-4 cursor-pointer">
+    <div className="grid grid-flow-row max-sm:grid-cols-1 grid-cols-3 gap-4 cursor-pointer">
       {activities?.map((activity: ActivityComponentInterface) => (
         <ActivityComponent
           id={activity.id}
