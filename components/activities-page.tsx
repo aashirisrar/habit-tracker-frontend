@@ -1,20 +1,12 @@
 "use client";
 
-import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import ActivityComponent from "./activity-component";
 import { useAtom } from "jotai";
-import {
-  activitiesAtom,
-  errorAtom,
-  fetchActivitiesAtom,
-  loadingAtom,
-} from "./atoms";
+import { activitiesAtom, fetchActivitiesAtom } from "@/state/atoms";
 
 const ActivitiesPage = () => {
   const [activities] = useAtom(activitiesAtom);
-  const [loading] = useAtom(loadingAtom);
-  const [error] = useAtom(errorAtom);
   const [, fetchActivities] = useAtom(fetchActivitiesAtom);
 
   useEffect(() => {

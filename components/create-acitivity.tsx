@@ -28,7 +28,7 @@ import {
 import axios from "axios";
 import { useState } from "react";
 import { useAtom } from "jotai";
-import { fetchActivitiesAtom } from "@/components/atoms";
+import { fetchActivitiesAtom } from "@/state/atoms";
 
 const formSchema = z.object({
   title: z.string(),
@@ -36,8 +36,6 @@ const formSchema = z.object({
 });
 
 export function CreateActivity() {
-  const [error, setError] = useState("");
-  const [success, setSuccess] = useState("");
   const [, fetchActivities] = useAtom(fetchActivitiesAtom);
   const [open, setOpen] = useState(false);
 
@@ -52,17 +50,15 @@ export function CreateActivity() {
   async function onSubmit(values: z.infer<typeof formSchema>) {
     try {
       const resp = await axios.post("api/activity/create-activity", values);
-      setError(resp.data.error);
-      setSuccess(resp.data.success);
       fetchActivities();
-      setOpen(false); // Close the modal on successful submission
+      setOpen(false);
     } catch (error) {
       console.log(error);
     }
   }
 
   return (
-    <Dialog open={open} onOpenChange={setOpen}>
+    <Dialog open={open}>
       <DialogTrigger asChild>
         <Button
           variant="default"
