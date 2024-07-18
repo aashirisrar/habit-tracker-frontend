@@ -4,13 +4,14 @@ import ActivityDetailsPage from "@/components/activity-details-page";
 import { CreateActivityValuesButton } from "@/components/create-activity-values-button";
 import { Button } from "@/components/ui/button";
 import axios from "axios";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const page = () => {
   const params = useParams();
   const [activity, setActivity] = useState();
   const [values, setValues] = useState([]);
+  const router = useRouter();
 
   async function getActivity() {
     const response = await axios.post("/api/activity/get-activity", {
@@ -31,6 +32,8 @@ const page = () => {
     const response = await axios.post("/api/activity/delete-activity", {
       id: params.activityid,
     });
+
+    router.push("/home");
   }
 
   return (

@@ -27,6 +27,8 @@ import {
 
 import axios from "axios";
 import { useState } from "react";
+import { useAtom } from "jotai";
+import { fetchActivitiesAtom } from "@/components/atoms";
 
 const formSchema = z.object({
   title: z.string(),
@@ -36,6 +38,8 @@ const formSchema = z.object({
 export function CreateActivity() {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+  const [, fetchActivities] = useAtom(fetchActivitiesAtom);
+  const [open, setOpen] = useState(false);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -46,21 +50,25 @@ export function CreateActivity() {
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
     try {
       const resp = await axios.post("api/activity/create-activity", values);
       setError(resp.data.error);
       setSuccess(resp.data.success);
-      location.reload();
+      fetchActivities();
+      setOpen(false); // Close the modal on successful submission
     } catch (error) {
       console.log(error);
     }
   }
 
   return (
-    <Dialog>
+    <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button variant="default" className="gap-x-1">
+        <Button
+          variant="default"
+          className="gap-x-1"
+          onClick={() => setOpen(true)}
+        >
           <PlusCircleIcon size={18} />
           Create Activity
         </Button>

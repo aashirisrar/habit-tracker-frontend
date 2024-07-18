@@ -3,18 +3,23 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import ActivityComponent from "./activity-component";
+import { useAtom } from "jotai";
+import {
+  activitiesAtom,
+  errorAtom,
+  fetchActivitiesAtom,
+  loadingAtom,
+} from "./atoms";
 
 const ActivitiesPage = () => {
-  const [activities, setActivities] = useState([]);
-
-  async function getUserActivities() {
-    const response = await axios.post("/api/activity/get-user-activity");
-    setActivities(response.data.habits);
-  }
+  const [activities] = useAtom(activitiesAtom);
+  const [loading] = useAtom(loadingAtom);
+  const [error] = useAtom(errorAtom);
+  const [, fetchActivities] = useAtom(fetchActivitiesAtom);
 
   useEffect(() => {
-    getUserActivities();
-  }, []);
+    fetchActivities();
+  }, [fetchActivities]);
 
   return (
     <div className="grid grid-flow-row grid-cols-3 gap-4 cursor-pointer">

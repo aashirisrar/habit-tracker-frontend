@@ -1,6 +1,5 @@
 import ActivitiesPage from "@/components/activities-page";
 import { CreateActivity } from "@/components/create-acitivity";
-import Demo from "@/components/heat-map";
 import React from "react";
 
 const page = () => {
