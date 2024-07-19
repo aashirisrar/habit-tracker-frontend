@@ -15,11 +15,13 @@ export const errorAtom = atom("");
 export const activityValues = atom([]);
 
 // Atom to fetch activities and update the relevant atoms
-export const fetchActivitiesAtom = atom(null, async (get, set) => {
+export const fetchActivitiesAtom = atom(null, async (get, set, userId) => {
   set(loadingAtom, true);
   set(errorAtom, "");
   try {
-    const response = await axios.post("/api/activity/get-user-activity");
+    const response = await axios.post("/api/activity/get-user-activity", {
+      id: userId,
+    });
     set(activitiesAtom, response.data.habits);
   } catch (error) {
     set(errorAtom, "Failed to fetch activities");

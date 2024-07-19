@@ -61,6 +61,7 @@ export function SignInFormComponent() {
       const token = localStorage.getItem("access_token");
       if (token) {
         document.cookie = `access_token=${token}; path=/;`;
+        sessionStorage.setItem("userId", response.id);
         router.push("/home");
       }
     } else {

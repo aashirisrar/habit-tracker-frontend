@@ -3,9 +3,8 @@ import axios from "axios";
 
 export async function POST(req: Request) {
   try {
-    // const id = await req.json();
-    const id = 1;
-    // get session here anid get user's id
+    const { id } = await req.json();
+
     const { data } = await axios.post(
       `http://127.0.0.1:8000/habits/get-user-habits?userId=${id}`
     );

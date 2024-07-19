@@ -16,7 +16,8 @@ const ActivitiesPage = () => {
     setTimeout(() => {
       setIsLoading(false);
     }, 3000);
-    fetchActivities();
+    const id = sessionStorage.getItem("userId");
+    fetchActivities(id);
   }, [fetchActivities]);
 
   if (isLoading) {
