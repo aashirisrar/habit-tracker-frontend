@@ -3,3 +3,8 @@ export interface ActivityComponentInterface {
   title: string;
   details: string;
 }
+
+export interface User {
+  email: string;
+  password: string;
+}

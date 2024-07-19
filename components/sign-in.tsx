@@ -20,12 +20,25 @@ import { FormError } from "@/components/form-error";
 import { FormSuccess } from "@/components/form-success";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { Box } from "lucide-react";
+import { User } from "@/types/route";
 
 const formSchema = z.object({
   email: z.string(),
   password: z.string(),
 });
+
+const useLoginValidation = async (user: User) => {
+  const response = await axios.post(
+    "http://127.0.0.1:8000/users/user-login",
+    user
+  );
+  if (response.data != null) {
+    const setToken = response.data.access_token;
+    localStorage.setItem("access_token", setToken);
+    return response.data;
+  }
+  return null;
+};
 
 export function SignInFormComponent() {
   const router = useRouter();
@@ -42,18 +55,16 @@ export function SignInFormComponent() {
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    startTransition(async () => {
-      try {
-        const resp = await axios.post("/api/signin", values);
-
-        router.push(resp.data.url);
-      } catch (error: any) {
-        if (error.response.status == 500) {
-          setError("Invalid Credentials");
-          return;
-        }
+    const response = await useLoginValidation(values);
+    if (response != null) {
+      setSuccess("Successfully Logged In");
+      const token = localStorage.getItem("access_token");
+      if (token) {
+        document.cookie = `access_token=${token}; path=/;`;
+        router.push("/home");
       }
-    });
+    }
+    setError("Wrong Credentials");
   }
 
   return (
