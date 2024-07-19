@@ -63,8 +63,9 @@ export function SignInFormComponent() {
         document.cookie = `access_token=${token}; path=/;`;
         router.push("/home");
       }
+    } else {
+      setError("Wrong Credentials");
     }
-    setError("Wrong Credentials");
   }
 
   return (
