@@ -49,8 +49,10 @@ export function CreateActivity() {
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     try {
+      const id = sessionStorage.getItem("userId");
+      values.owner_id = id;
       const resp = await axios.post("api/activity/create-activity", values);
-      fetchActivities();
+      fetchActivities(id);
       setOpen(false);
     } catch (error) {
       console.log(error);
