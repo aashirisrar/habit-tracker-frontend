@@ -44,10 +44,10 @@ export function SignUpForm() {
       try {
         const resp = await axios.post("api/profile/createprofile", values);
         router.push("/sign-in");
-        setError(resp.data.error);
-        setSuccess(resp.data.success);
-      } catch (error) {
-        console.log(error);
+        setError("");
+        setSuccess(resp.data.message);
+      } catch (error: any) {
+        setError(error.response.data.message);
       }
     });
   }
@@ -66,7 +66,7 @@ export function SignUpForm() {
                   <FormControl>
                     <Input
                       disabled={isPending}
-                      type="text"
+                      type="email"
                       placeholder="e.g example@example.com"
                       {...field}
                       required

@@ -10,6 +10,13 @@ export async function POST(req: Request) {
       d
     );
 
+    if (data.error == "user already exists") {
+      return NextResponse.json(
+        { message: "User already exists" },
+        { status: 500 }
+      );
+    }
+
     return NextResponse.json(
       { message: "Successfully created user", data: data },
       { status: 200 }

@@ -55,18 +55,25 @@ export function SignInFormComponent() {
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    const response = await useLoginValidation(values);
-    if (response != null) {
-      setSuccess("Successfully Logged In");
-      const token = localStorage.getItem("access_token");
-      if (token) {
-        document.cookie = `access_token=${token}; path=/;`;
-        sessionStorage.setItem("userId", response.id);
-        router.push("/home");
+    startTransition(async () => {
+      try {
+        const response = await useLoginValidation(values);
+        if (response != null) {
+          setError("");
+          setSuccess("Successfully Logged In");
+          const token = localStorage.getItem("access_token");
+          if (token) {
+            document.cookie = `access_token=${token}; path=/;`;
+            sessionStorage.setItem("userId", response.id);
+            router.push("/home");
+          }
+        } else {
+          setError("Wrong Credentials");
+        }
+      } catch {
+        console.log(error);
       }
-    } else {
-      setError("Wrong Credentials");
-    }
+    });
   }
 
   return (
@@ -92,8 +99,8 @@ export function SignInFormComponent() {
                         <FormControl>
                           <Input
                             disabled={isPending}
-                            type="text"
-                            placeholder="lXXXXXX@lhr.nu.edu.pk"
+                            type="string"
+                            placeholder="example@example.com"
                             {...field}
                             required
                           />
