@@ -9,7 +9,7 @@ const Testimonials = () => {
         <div className="text-3xl font-bold">Happy Customers</div>
         <div>Hear what our customer say about us</div>
       </div>
-      <div className="flex gap-6">
+      <div className="flex gap-12">
         <div className="flex flex-col gap-6">
           <div className="flex gap-1">
             <div>

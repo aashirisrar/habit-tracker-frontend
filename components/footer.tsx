@@ -54,7 +54,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="flex justify-between w-full mx-auto gap-3 text-muted-foreground">
-        <div>© 2024 Seller Inc. All rights reserved.</div>
+        <div>© 2024 Habit Inc. All rights reserved.</div>
         <div className="flex gap-4">
           <Link href="/" className="cursor-pointer hover:underline">
             Privacy Policy
