@@ -1,4 +1,5 @@
-import { ArrowRightIcon, ShoppingBag } from "lucide-react";
+import { ArrowRight, ArrowRightIcon, ShoppingBag } from "lucide-react";
+import { Button } from "./ui/button";
 
 const KeyFeatures = () => {
   return (
@@ -18,10 +19,6 @@ const KeyFeatures = () => {
           </div>
           <div className="text-lg font-bold">Personalized Habit Tracking </div>
           <div>Create custom habits and set personalized goals.</div>
-          <div className="flex gap-2 items-center justify-center">
-            <div>Learn More </div>
-            <ArrowRightIcon />
-          </div>
         </div>
         <div className="flex flex-1 flex-col gap-5 justify-center items-center">
           <div>
@@ -31,10 +28,6 @@ const KeyFeatures = () => {
             Progress Insights and Analytics
           </div>
           <div>Get valuable insights and analytics on your habit progress.</div>
-          <div className="flex gap-2 items-center justify-center">
-            <div>Learn More </div>
-            <ArrowRightIcon />
-          </div>
         </div>
         <div className="flex flex-1 flex-col gap-5 justify-center items-center">
           <div>
@@ -44,10 +37,19 @@ const KeyFeatures = () => {
             Daily Reminders and Notifications
           </div>
           <div>Stay on track with daily reminders and notifications.</div>
-          <div className="flex gap-2 items-center justify-center">
-            <div>Learn More</div>
-            <ArrowRightIcon />
-          </div>
+        </div>
+      </div>
+      <div className="flex gap-3">
+        <div>
+          <Button variant="outline">Learn More</Button>
+        </div>
+        <div>
+          <Button>
+            <div className="flex items-center justify-center text-md gap-1 font-semibold">
+              Sign Up
+              <ArrowRight width={18} />
+            </div>
+          </Button>
         </div>
       </div>
     </section>
