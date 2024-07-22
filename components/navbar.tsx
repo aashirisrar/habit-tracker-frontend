@@ -8,17 +8,17 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { ModeToggle } from "./mode-toggle";
-import { Store } from "lucide-react";
+import { Package2, Store } from "lucide-react";
 
 export function MainNavigationMenu() {
   return (
     <header className="top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-14 max-w-screen-2xl items-center">
         <a className="mr-6 flex items-center space-x-2" href="/">
-          <Store />
-          <span className="hidden font-bold sm:inline-block">Seller Inc</span>
+          <Package2 />
+          <span className="hidden font-bold sm:inline-block">Habit Inc</span>
         </a>
-        <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
+        <div className="flex flex-1 items-center  space-x-2 justify-center">
           <nav className="flex items-center gap-3">
             <NavigationMenu>
               <NavigationMenuList className="flex gap-3">
@@ -27,7 +27,7 @@ export function MainNavigationMenu() {
                     <NavigationMenuLink
                       className={navigationMenuTriggerStyle()}
                     >
-                      Buy Now
+                      Track Habits
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
@@ -36,7 +36,7 @@ export function MainNavigationMenu() {
                     <NavigationMenuLink
                       className={navigationMenuTriggerStyle()}
                     >
-                      Sell Items
+                      Progress Tracker
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
@@ -45,7 +45,7 @@ export function MainNavigationMenu() {
                     <NavigationMenuLink
                       className={navigationMenuTriggerStyle()}
                     >
-                      My Account
+                      Achievements
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>

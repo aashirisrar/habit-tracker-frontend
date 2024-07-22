@@ -4,20 +4,20 @@ const KeyFeatures = () => {
   return (
     <section className="mx-auto gap-12 flex flex-col items-center justify-between py-8 md:py-12 md:pb-8 lg:py-24 lg:pb-20">
       <div className="text-xl text-center mx-80 font-bold leading-tight tracking-tighter md:text-4xl lg:leading-[1.1] hidden md:block">
-        Discover a Wide Variety of Products on Our Secure Marketplace
+        Monitor your behaviors and reach your objectives.
+      </div>
+      <div className="text-sm mx-80 text-center">
+        Our habit tracker app helps you stay on track, build positive habits,
+        and reach your goals. With easy-to-use features and personalized
+        tracking, you'll be able to make lasting changes in your life.
       </div>
       <div className="flex gap-5 justify-center items-center text-center">
         <div className="flex flex-1 flex-col gap-5 justify-center items-center">
           <div>
             <ShoppingBag />
           </div>
-          <div className="text-lg font-bold">
-            Buy and Sell with Confidence Using Our Seller Rating System
-          </div>
-          <div>
-            Our platform ensures secure transactions and offers a diverse range
-            of product categories.
-          </div>
+          <div className="text-lg font-bold">Personalized Habit Tracking </div>
+          <div>Create custom habits and set personalized goals.</div>
           <div className="flex gap-2 items-center justify-center">
             <div>Learn More </div>
             <ArrowRightIcon />
@@ -28,11 +28,9 @@ const KeyFeatures = () => {
             <ShoppingBag />
           </div>
           <div className="text-lg font-bold">
-            Connect with a Global Community of Buyers and Sellers
+            Progress Insights and Analytics
           </div>
-          <div>
-            Join our marketplace and experience the power of a global network.
-          </div>
+          <div>Get valuable insights and analytics on your habit progress.</div>
           <div className="flex gap-2 items-center justify-center">
             <div>Learn More </div>
             <ArrowRightIcon />
@@ -43,12 +41,9 @@ const KeyFeatures = () => {
             <ShoppingBag />
           </div>
           <div className="text-lg font-bold">
-            Find Unique and Hard-to-Find Items from Trusted Sellers
+            Daily Reminders and Notifications
           </div>
-          <div>
-            Discover one-of-a-kind products from reliable sellers in our
-            marketplace.
-          </div>
+          <div>Stay on track with daily reminders and notifications.</div>
           <div className="flex gap-2 items-center justify-center">
             <div>Learn More</div>
             <ArrowRightIcon />

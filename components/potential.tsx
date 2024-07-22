@@ -51,4 +51,4 @@ const Potential = () => {
   );
 };
 
-export default Confidence;
+export default Potential;

@@ -1,3 +1,5 @@
+"use client";
+
 import Hero from "@/components/hero";
 import KeyFeatures from "@/components/key-features";
 import Potential from "@/components/potential";

@@ -1,7 +1,7 @@
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 
-const DonwloadNow = () => {
+const DownloadNow = () => {
   return (
     <section className="mx-auto flex flex-col gap-6 items-center justify-between py-8 md:py-12 md:pb-8 lg:py-24 lg:pb-20">
       <div className="flex flex-col items-start justify-center gap-3">
@@ -29,4 +29,4 @@ const DonwloadNow = () => {
   );
 };
 
-export default Contact;
+export default DownloadNow;
