@@ -28,12 +28,12 @@ const NavbarDashboard = () => {
 
   useEffect(() => {
     async function fetchUserProfile() {
-      try {
-        const response = await axios.post("/api/profile/getprofile");
-        setProfilePicture(response.data.user.profilePicture);
-      } catch (error) {
-        console.error("Error fetching user profile:", error);
-      }
+      // try {
+      //   const response = await axios.post("/api/profile/getprofile");
+      //   setProfilePicture(response.data.user.profilePicture);
+      // } catch (error) {
+      //   console.error("Error fetching user profile:", error);
+      // }
     }
 
     fetchUserProfile();

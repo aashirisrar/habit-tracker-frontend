@@ -1,11 +1,13 @@
 "use client";
 
+import { SkeletonCard } from "@/components/skeleton-card";
 import { User } from "@/types/route";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
 const ProfilePage = () => {
   const [user, setUser] = useState<User>();
+  const [isLoading, setIsLoading] = useState(true);
 
   async function getUserProfile() {
     const id = sessionStorage.getItem("userId");
@@ -14,8 +16,15 @@ const ProfilePage = () => {
   }
 
   useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 3000);
     getUserProfile();
   }, []);
+
+  if (isLoading) {
+    return <SkeletonCard />;
+  }
 
   return (
     <>
