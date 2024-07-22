@@ -58,32 +58,26 @@ export function MainNavigationMenu() {
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
-                <NavigationMenuItem>
-                  <Link href="/sign-up" legacyBehavior passHref>
-                    <NavigationMenuLink
-                      className={
-                        "group inline-flex h-9 w-max items-center justify-center outline outline-[0.1px] outline-secondary rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
-                      }
-                    >
-                      Sign Up
-                    </NavigationMenuLink>
-                  </Link>
-                </NavigationMenuItem>
-                <NavigationMenuItem>
-                  <Link href="/sign-in" legacyBehavior passHref>
-                    <NavigationMenuLink
-                      className={
-                        "group inline-flex h-10 w-max items-center justify-center rounded-md bg-secondary-foreground text-primary-foreground px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
-                      }
-                    >
-                      Log In
-                    </NavigationMenuLink>
-                  </Link>
-                </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
-            <ModeToggle />
           </nav>
+        </div>
+        <div className="flex justify-end gap-3">
+          <div className="flex gap-3 items-center">
+            <Link
+              href="/sign-up"
+              className="group inline-flex h-9 w-max items-center justify-center outline outline-[0.1px] outline-secondary rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
+            >
+              Sign Up
+            </Link>
+            <Link
+              href="/sign-in"
+              className="group inline-flex h-9 w-max items-center justify-center outline outline-[0.1px] outline-secondary rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
+            >
+              Log In
+            </Link>
+          </div>
+          <ModeToggle />
         </div>
       </div>
     </header>

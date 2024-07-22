@@ -1,4 +1,5 @@
 import { Facebook, Instagram, Linkedin, Twitter, Youtube } from "lucide-react";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -38,18 +39,32 @@ const Footer = () => {
           </div>
         </div>
         <div className="flex flex-col flex-1 gap-3 text-sm pt-10">
-          <div>Track Habits</div>
-          <div>Progress Tracker</div>
-          <div>Achievements</div>
-          <div>Explore</div>
+          <Link href="/" className="cursor-pointer hover:underline">
+            Track Habits
+          </Link>
+          <Link href="/" className="cursor-pointer hover:underline">
+            Progress Tracker
+          </Link>
+          <Link href="/" className="cursor-pointer hover:underline">
+            Achievements
+          </Link>
+          <Link href="/" className="cursor-pointer hover:underline">
+            Explore
+          </Link>
         </div>
       </div>
       <div className="flex justify-between w-full mx-auto gap-3 text-muted-foreground">
         <div>© 2024 Seller Inc. All rights reserved.</div>
         <div className="flex gap-4">
-          <div>Privacy Policy</div>
-          <div>Terms and Conditions</div>
-          <div>Cookie Policy</div>
+          <Link href="/" className="cursor-pointer hover:underline">
+            Privacy Policy
+          </Link>
+          <Link href="/" className="cursor-pointer hover:underline">
+            Terms and Conditions
+          </Link>
+          <Link href="/" className="cursor-pointer hover:underline">
+            Cookie Policy
+          </Link>
         </div>
       </div>
     </section>
