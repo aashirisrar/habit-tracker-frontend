@@ -5,6 +5,7 @@ import HeatMap from "@uiw/react-heat-map";
 
 const HeatMapComponent = ({ values }: any) => {
   const [range, setRange] = useState(5);
+  const [selected, setSelected] = useState("");
 
   return (
     <div className="flex flex-col items-center justify-center">
@@ -23,6 +24,19 @@ const HeatMapComponent = ({ values }: any) => {
         )}
         rectProps={{
           rx: range,
+        }}
+        rectRender={(props, data) => {
+          if (selected !== "") {
+            props.opacity = data.date === selected ? 1 : 0.45;
+          }
+          return (
+            <rect
+              {...props}
+              onClick={() => {
+                setSelected(data.date === selected ? "" : data.date);
+              }}
+            />
+          );
         }}
       />
     </div>
