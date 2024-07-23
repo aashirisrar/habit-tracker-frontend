@@ -34,7 +34,7 @@ const Discover = () => {
             height={450}
             alt="hero-img"
             className="h-full w-full object-cover"
-            src="/hero.jpg"
+            src="/h3.jpg"
           />
         </div>
       </div>
