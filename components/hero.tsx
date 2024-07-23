@@ -43,18 +43,18 @@ const Hero = () => {
           tracker app.
         </span>
         <div className="flex w-full items-center justify-start space-x-4 py-4 md:pb-10">
-          <a
+          <Link
             className="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground h-9 px-4 py-2 rounded-[6px]"
-            href="/home"
+            href="/sign-up"
           >
             Get Started
-          </a>
-          <a
-            className=" inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground shadow hover:bg-primary/90 h-9 px-4 py-2 rounded-[6px]"
+          </Link>
+          <Link
+            className="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground shadow hover:bg-primary/90 h-9 px-4 py-2 rounded-[6px]"
             href="/sign-up"
           >
             Learn More
-          </a>
+          </Link>
         </div>
       </div>
       <div className="flex flex-1 items-center justify-center">

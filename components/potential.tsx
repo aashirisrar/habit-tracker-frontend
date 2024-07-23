@@ -5,7 +5,7 @@ const Potential = () => {
   return (
     <section className="mx-auto gap-20 flex flex-col items-start justify-center py-8 md:py-12 md:pb-8 lg:py-24 lg:pb-20">
       <div className="flex gap-3">
-        <div className="flex flex-col flex-1 gap-8">
+        <div className="flex flex-col flex-1 gap-8 items-start justify-center">
           <div className="text-xl font-bold leading-tight tracking-tighter md:text-4xl lg:leading-[1.1] hidden md:block">
             Unlock Your Potential with Our Habit Tracker App
           </div>

@@ -29,8 +29,8 @@ const Testimonials = () => {
             </div>
           </div>
           <div className="text-lg font-semibold">
-            The app is amazing! It has made buying and selling so much easier
-            for me.
+            Our habit tracker app has helped me stay focused and achieve my
+            goals. Highly recommended!
           </div>
           <div className="flex justify-start gap-6">
             <div className="flex gap-5">
@@ -73,8 +73,8 @@ const Testimonials = () => {
             </div>
           </div>
           <div className="text-lg font-semibold">
-            The app is amazing! It has made buying and selling so much easier
-            for me.
+            Using this app has been a game-changer for me. It's so easy to track
+            my habits and see my progress!
           </div>
           <div className="flex justify-start gap-6">
             <div className="flex gap-5">

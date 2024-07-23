@@ -1,5 +1,6 @@
 import { ArrowRight, ArrowRightIcon, ShoppingBag } from "lucide-react";
 import { Button } from "./ui/button";
+import Link from "next/link";
 
 const KeyFeatures = () => {
   return (
@@ -40,15 +41,18 @@ const KeyFeatures = () => {
         </div>
       </div>
       <div className="flex gap-3">
-        <div>
+        <Link href="/sign-up">
           <Button variant="outline">Learn More</Button>
-        </div>
+        </Link>
         <div>
           <Button>
-            <div className="flex items-center justify-center text-md gap-1 font-semibold">
+            <Link
+              href="/sign-up"
+              className="flex items-center justify-center text-md gap-1 font-semibold"
+            >
               Sign Up
               <ArrowRight width={18} />
-            </div>
+            </Link>
           </Button>
         </div>
       </div>
