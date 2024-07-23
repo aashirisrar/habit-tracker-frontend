@@ -4,7 +4,7 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <section className="mx-auto flex flex-col gap-16 py-8 md:py-12 md:pb-8 lg:py-24 lg:pb-20">
-      <div className="flex gap-3">
+      <div className="flex max-sm:flex-col gap-3">
         <div className="flex flex-col flex-1 gap-6">
           <div className="text-xl font-bold">Habit Inc</div>
           <div className="flex flex-col gap-4 text-sm">
@@ -53,9 +53,8 @@ const Footer = () => {
           </Link>
         </div>
       </div>
-      <div className="flex justify-between w-full mx-auto gap-3 text-muted-foreground">
-        <div>© 2024 Habit Inc. All rights reserved.</div>
-        <div className="flex gap-4">
+      <div className="flex max-sm:flex-col max-sm:gap-8 justify-between w-full mx-auto gap-3 text-muted-foreground">
+        <div className="flex max-sm:flex-col gap-4">
           <Link href="/" className="cursor-pointer hover:underline">
             Privacy Policy
           </Link>
@@ -66,6 +65,7 @@ const Footer = () => {
             Cookie Policy
           </Link>
         </div>
+        <div>© 2024 Habit Inc. All rights reserved.</div>
       </div>
     </section>
   );
