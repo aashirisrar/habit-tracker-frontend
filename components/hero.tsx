@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Hero = () => {
   return (
-    <section className="mx-auto flex items-center justify-between py-8 md:py-12 md:pb-8 lg:py-24 lg:pb-20">
+    <section className="mx-auto flex max-sm:flex-col items-center justify-between py-8 md:py-12 md:pb-8 lg:py-24 lg:pb-20">
       <div className="flex flex-1 flex-col items-start justify-center gap-3">
         <Link
           className="inline-flex items-center rounded-lg bg-muted px-3 py-1 text-sm font-medium"
@@ -35,7 +35,7 @@ const Hero = () => {
             ></path>
           </svg>
         </Link>
-        <h1 className="text-3xl font-bold leading-tight tracking-tighter md:text-6xl lg:leading-[1.1] hidden md:block">
+        <h1 className="text-3xl font-bold leading-tight tracking-tighter md:text-6xl lg:leading-[1.1]">
           Track your habits and achieve your goals
         </h1>
         <span className="max-w-[750px] text-lg text-muted-foreground sm:text-xl">
@@ -58,7 +58,7 @@ const Hero = () => {
         </div>
       </div>
       <div className="flex flex-1 items-center justify-center">
-        <div className="w-[30rem] h-[30rem]">
+        <div className="max-sm:w-[20rem] max-sm:h-[20rem] w-[30rem] h-[30rem]">
           <Image
             width={450}
             height={450}
