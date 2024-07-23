@@ -5,15 +5,15 @@ import Link from "next/link";
 const KeyFeatures = () => {
   return (
     <section className="mx-auto gap-12 flex flex-col items-center justify-between py-8 md:py-12 md:pb-8 lg:py-24 lg:pb-20">
-      <div className="text-xl text-center mx-80 font-bold leading-tight tracking-tighter md:text-4xl lg:leading-[1.1] hidden md:block">
+      <div className="text-3xl text-center mx-30 max-sm:mx-1 max-md:mx-20 lg:mx-40 xl:mx-80 font-bold leading-tight tracking-tighter md:text-4xl lg:leading-[1.1]">
         Monitor your behaviors and reach your objectives.
       </div>
-      <div className="text-sm mx-80 text-center">
+      <div className="text-sm mx-30 max-sm:mx-1 max-md:mx-20 lg:mx-40 xl:mx-80 text-center">
         Our habit tracker app helps you stay on track, build positive habits,
         and reach your goals. With easy-to-use features and personalized
         tracking, you'll be able to make lasting changes in your life.
       </div>
-      <div className="flex gap-5 justify-center items-center text-center">
+      <div className="flex max-sm:flex-col gap-5 justify-center items-center text-center">
         <div className="flex flex-1 flex-col gap-5 justify-center items-center">
           <div>
             <ShoppingBag />
