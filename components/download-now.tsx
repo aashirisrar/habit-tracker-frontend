@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Discover = () => {
   return (
-    <section className="mx-auto flex max-sm:flex-col max-sm:gap-6 items-center justify-between py-8 md:py-12 md:pb-8 lg:py-24 lg:pb-20">
+    <section className="mx-auto flex max-md:flex-col max-sm:gap-6 items-center justify-between py-8 md:py-12 md:pb-8 lg:py-24 lg:pb-20">
       <div className="flex flex-1 flex-col items-start justify-center gap-3">
         <h1 className="text-3xl font-bold leading-tight tracking-tighter md:text-6xl lg:leading-[1.1]">
           Achieve Your Goals with Us

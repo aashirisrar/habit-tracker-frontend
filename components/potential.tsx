@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const Potential = () => {
   return (
-    <section className="mx-auto gap-20 flex max-sm:flex-col items-center justify-center py-8 md:py-12 md:pb-8 lg:py-24 lg:pb-20">
+    <section className="mx-auto gap-20 flex max-md:flex-col items-center justify-center py-8 md:py-12 md:pb-8 lg:py-24 lg:pb-20">
       <div className="flex flex-col flex-1 gap-8 items-start justify-center">
         <div className="text-3xl font-bold leading-tight tracking-tighter md:text-4xl lg:leading-[1.1]">
           Unlock Your Potential with Our Habit Tracker App

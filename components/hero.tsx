@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Hero = () => {
   return (
-    <section className="mx-auto flex max-sm:flex-col items-center justify-between py-8 md:py-12 md:pb-8 lg:py-24 lg:pb-20">
+    <section className="mx-auto max-md:gap-10 gap-1 flex max-md:flex-col items-center justify-between py-8 md:py-12 md:pb-8 lg:py-24 lg:pb-20">
       <div className="flex flex-1 flex-col items-start justify-center gap-3">
         <Link
           className="inline-flex items-center rounded-lg bg-muted px-3 py-1 text-sm font-medium"

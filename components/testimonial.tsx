@@ -9,7 +9,7 @@ const Testimonials = () => {
         <div className="text-3xl font-bold">Happy Customers</div>
         <div>Hear what our customer say about us</div>
       </div>
-      <div className="flex max-sm:flex-col gap-12">
+      <div className="flex max-md:flex-col gap-12">
         <div className="flex flex-col gap-6">
           <div className="flex gap-1">
             <div>
@@ -32,7 +32,7 @@ const Testimonials = () => {
             Our habit tracker app has helped me stay focused and achieve my
             goals. Highly recommended!
           </div>
-          <div className="flex max-sm:flex-col justify-start gap-6">
+          <div className="flex max-md:flex-col justify-start gap-6">
             <div className="flex items-center justify-center gap-5">
               <div className="h-[50px] w-[50px]">
                 <Image
@@ -45,13 +45,13 @@ const Testimonials = () => {
               </div>
               <div>Marketing Manager, ABC Company</div>
             </div>
-            <div className="py-5 outline outline-1 max-sm:hidden"></div>
+            <div className="py-5 outline outline-1 max-md:hidden"></div>
             <div className="flex items-center justify-start">
               <Twitter fill="white" />
             </div>
           </div>
         </div>
-        <div className="flex flex-col gap-6 max-sm:hidden">
+        <div className="flex flex-col gap-6 max-md:hidden">
           <div className="flex gap-1">
             <div>
               <Star />
