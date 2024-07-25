@@ -46,7 +46,7 @@ const Testimonials = () => {
               <div>Marketing Manager, ABC Company</div>
             </div>
             <div className="py-5 outline outline-1 max-md:hidden"></div>
-            <div className="flex items-center justify-start">
+            <div className="flex items-center justify-center">
               <Twitter fill="white" />
             </div>
           </div>
