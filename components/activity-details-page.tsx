@@ -20,7 +20,7 @@ const ActivityDetailsPage = ({
     >
       <div className="flex items-center justify-center gap-3">
         <div className="text-xl">{details}</div>
-        <div className="text-lg font-light">{title}</div>
+        <div className="text-lg">{title}</div>
       </div>
       <div>
         <HeatMapComponent values={values} />

@@ -10,7 +10,7 @@ const ActivityComponent = ({
     <Link href={"/activity/" + id}>
       <div className="flex items-center justify-start gap-3 bg-secondary p-3 rounded-lg hover:bg-primary-foreground">
         <div className="text-xl">{details}</div>
-        <div className="text-lg font-light">{title}</div>
+        <div>{title}</div>
       </div>
     </Link>
   );
