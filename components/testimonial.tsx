@@ -36,7 +36,7 @@ const Testimonials = () => {
             <div className="flex items-center justify-center gap-5">
               <div className="h-[50px] w-[50px]">
                 <Image
-                  src="/hero.jpg"
+                  src="/h2.jpg"
                   alt="profile"
                   className="rounded-full w-full h-full"
                   width={50}
@@ -77,7 +77,7 @@ const Testimonials = () => {
             <div className="flex gap-5 items-center justify-center">
               <div className="h-[50px] w-[50px]">
                 <Image
-                  src="/hero.jpg"
+                  src="/h1.jpg"
                   alt="profile"
                   className="rounded-full w-full h-full"
                   width={50}
