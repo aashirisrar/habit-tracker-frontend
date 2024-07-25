@@ -10,7 +10,7 @@ const HeatMapComponent = ({ values }: any) => {
   return (
     <div className="flex flex-col items-center justify-center">
       <HeatMap
-        width={720}
+        className="w-[720px] max-sm:w-[300px] max-lg:w-[510px]"
         value={values}
         weekLabels={["Mon", "", "Wed", "", "Fri", "", "Sun"]}
         style={{

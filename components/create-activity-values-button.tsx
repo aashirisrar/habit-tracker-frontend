@@ -72,7 +72,7 @@ export function CreateActivityValuesButton({ id }: any) {
           onClick={() => setOpen(true)}
         >
           <PlusCircleIcon size={18} />
-          Create Activity Values
+          Record Activity
         </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">

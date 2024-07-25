@@ -55,7 +55,9 @@ const page = () => {
         <h1 className="text-lg font-semibold md:text-2xl">Activity</h1>
         <div className="flex gap-x-3">
           {activity && (
-            <Button onClick={deleteActivity}>Delete Activity</Button>
+            <Button className="max-sm:hidden" onClick={deleteActivity}>
+              Delete Activity
+            </Button>
           )}
           {activity && <CreateActivityValuesButton id={activity?.id} />}
         </div>
