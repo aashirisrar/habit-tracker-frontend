@@ -16,10 +16,12 @@ const ActivityDetailsPage = ({
   return (
     <div
       key={id}
-      className="flex flex-col gap-3 bg-primary-foreground rounded-lg p-4"
+      className="flex flex-col gap-5 bg-primary-foreground rounded-lg p-4"
     >
-      <div>{title}</div>
-      <div>{details}</div>
+      <div className="flex items-center justify-center gap-3">
+        <div className="text-xl">{details}</div>
+        <div className="text-lg font-light">{title}</div>
+      </div>
       <div>
         <HeatMapComponent values={values} />
       </div>
