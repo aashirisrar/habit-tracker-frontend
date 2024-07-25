@@ -24,6 +24,13 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 import axios from "axios";
 import { useState } from "react";
@@ -38,6 +45,7 @@ const formSchema = z.object({
 export function CreateActivity() {
   const [, fetchActivities] = useAtom(fetchActivitiesAtom);
   const [open, setOpen] = useState(false);
+  const [genderplaceholder] = useState("Select an icon");
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -102,16 +110,23 @@ export function CreateActivity() {
                 name="details"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Details:</FormLabel>
-                    <FormControl>
-                      <Textarea
-                        placeholder="e.g reading with full concentration a book"
-                        className="col-span-3"
-                        {...field}
-                        required
-                      />
-                    </FormControl>
-                    <FormMessage />
+                    <FormLabel>Icon</FormLabel>
+                    <Select
+                      onValueChange={field.onChange}
+                      defaultValue={field.value}
+                    >
+                      <FormControl>
+                        <SelectTrigger>
+                          <SelectValue placeholder={genderplaceholder} />
+                        </SelectTrigger>
+                      </FormControl>
+                      <SelectContent>
+                        <SelectItem value="💪">💪 Exercise</SelectItem>
+                        <SelectItem value="📚">📚 Books</SelectItem>
+                        <SelectItem value="🏃">🏃 Running</SelectItem>
+                        <SelectItem value="🚴">🚴 Biking</SelectItem>
+                      </SelectContent>
+                    </Select>
                   </FormItem>
                 )}
               />
